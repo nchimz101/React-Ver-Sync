@@ -1,0 +1,40 @@
+# Development files
+node_modules/
+src/
+scripts/
+examples/
+docs/
+.github/
+.vscode/
+.idea/
+.git/
+
+# Build configs
+tsconfig.json
+.eslintrc.js
+.prettierrc
+.babelrc
+
+# Tests
+__tests__/
+*.test.*
+*.spec.*
+coverage/
+
+# Misc
+.DS_Store
+.env
+.env.*
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor files
+*.swp
+*.swo
+*.swn
+
+# Don't ignore these files
+!dist/
+!dist/**/*

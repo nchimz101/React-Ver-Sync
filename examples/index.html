@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>versynch Demo</title>
+  <meta name="description" content="Demo application for versynch - the reliable version sync solution for React apps">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#4285f4">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      height: 100%;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 20px;
+    }
+    
+    .version-badge {
+      background-color: #f1f1f1;
+      border-radius: 16px;
+      padding: 4px 12px;
+      font-size: 14px;
+      color: #555;
+    }
+    
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+    }
+    
+    .feature-card {
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    .feature-icon {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    
+    .admin-section {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 40px;
+    }
+    
+    .button {
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+    
+    .button:hover {
+      background-color: #356ac3;
+    }
+    
+    .button.secondary {
+      background-color: transparent;
+      color: #4285f4;
+      border: 1px solid #4285f4;
+    }
+    
+    .button-group {
+      display: flex;
+      gap: 10px;
+    }
+    
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      color: #777;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <!-- Content will be rendered by React -->
+    <div class="container">
+      <header>
+        <h1>versynch Demo</h1>
+        <span class="version-badge">v2.1.0</span>
+      </header>
+      
+      <main>
+        <h2>Reliable Version Synchronization for React Apps</h2>
+        <p>
+          This demo showcases how versynch automatically detects and updates outdated versions
+          of your application, ensuring all users have the latest features and fixes.
+        </p>
+        
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🔄</div>
+            <h3>Auto Detection</h3>
+            <p>Automatically detects legacy versions and forces updates for severely outdated clients.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Version Tracking</h3>
+            <p>Full semantic versioning with build numbers for precise version control.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">⏰</div>
+            <h3>Smart Updates</h3>
+            <p>Detects user activity and performs updates during idle periods.</p>
+          </div>
+          
+          <div class="feature-card">
+            <div class="feature-icon">🔄</div>
+            <h3>Cache Clearing</h3>
+            <p>Aggressive cache clearing and service worker reset for clean slate updates.</p>
+          </div>
+        </div>
+        
+        <div class="admin-section">
+          <h3>Admin Controls</h3>
+          <p>Version management tools for administrators</p>
+          
+          <div class="button-group">
+            <button class="button">Force Update All Users</button>
+            <button class="button secondary">Check for Updates</button>
+          </div>
+        </div>
+      </main>
+      
+      <footer>
+        <p>&copy; 2025 versynch - MIT License</p>
+      </footer>
+    </div>
+  </div>
+  
+  <script>
+    // Register service worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('Service Worker registered with scope:', registration.scope);
+          })
+          .catch(error => {
+            console.error('Service Worker registration failed:', error);
+          });
+      });
+    }
+  </script>
+</body>
+</html>
