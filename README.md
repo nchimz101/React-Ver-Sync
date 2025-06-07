@@ -2,6 +2,11 @@
 
 > The most reliable auto-update & version sync solution for React + PWA apps
 
+![npm](https://img.shields.io/npm/v/versynch)
+![License](https://img.shields.io/npm/l/versynch)
+
+**🎉 NOW LIVE ON NPM! Install with: `npm install versynch`**
+
 `versynch` is a comprehensive solution for managing version control and force-updating outdated React applications. It solves the problem of users getting stuck with stale cached versions, especially in PWA (Progressive Web App) environments.
 
 ## ✨ Features
@@ -28,8 +33,17 @@
 
 ## 🚀 Installation
 
+The package is now available on npm! Install it using your preferred package manager:
+
 ```bash
+# Using npm
 npm install versynch
+
+# Using yarn
+yarn add versynch
+
+# Using pnpm
+pnpm add versynch
 ```
 
 ## 📋 Requirements
