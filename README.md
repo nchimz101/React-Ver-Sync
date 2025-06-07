@@ -1,4 +1,4 @@
-# 🔄 versynch
+# versynch
 
 > The most reliable auto-update & version sync solution for React + PWA apps
 
